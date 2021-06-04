@@ -2,13 +2,11 @@
 // import express from 'express'
 
 const express = require("express");
-// const router = require("./components/message/network");
+require("dotenv").config();
 const db = require("./db");
 const router = require("./network/routes");
 
-db(
-  "mongodb+srv://qizaiming:12345@cluster0.rliev.mongodb.net/platzimessagesdb?retryWrites=true&w=majority"
-);
+db(process.env.DATABASE_URL);
 
 var app = express();
 app.use(express.json());
