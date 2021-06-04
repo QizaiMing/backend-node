@@ -11,6 +11,13 @@ function addUser(name) {
   return store.add(user);
 }
 
+function listUsers() {
+  return new Promise((resolve, reject) => {
+    resolve(store.list());
+  });
+}
+
 module.exports = {
   addUser,
+  listUsers,
 };
